@@ -1,0 +1,100 @@
+<h1><%= link_to "<--Keep Shopping", home_catalog_path %></h1>
+<h1>Shopping Cart</h1>
+
+
+<% i=0 %>
+<% totqty=0 %>
+<% totprice=0 %>
+<% cartlen = session[:cart_prod].length %>
+
+<% if cartlen >0 %>
+	<table border=1>
+		<tr>
+			<th> Product Name </th>
+			<th> Sale Price </th>
+			<th> Qty Selected </th>
+		</tr>
+
+	<% while i < cartlen %>
+		<tr>
+			<td> <%= Product.find(session[:cart_prod][i].to_i).prodname %> </td>
+			<td align='right'> <%= number_to_currency(Product.find(session[:cart_prod][i].to_i).price) %> </td>
+			<td align='center'> <%= session[:cart_qty][i] %> </td>
+			<td>
+				<%= form_tag :controller => 'home', :action => 'updatecart' do %>
+					<%= hidden_field_tag 'cartid', "#{i}" %>
+					<%= submit_tag 'Remove' %>
+			    <% end %>
+			</td>
+		</tr>
+		<% totqty = totqty + session[:cart_qty][i].to_i %>
+		<% totprice = totprice + (Product.find(session[:cart_prod][i].to_i).price * session[:cart_qty][i].to_i) %>
+		<% i = i + 1 %>
+	<% end %>
+
+		<tr bgcolor='yellow'>
+			<td> <b> Total </b> </td>
+			<td align='right'> <b> <%= number_to_currency(totprice) %> </b> </td>
+			<td align='center'> <b> <%= totqty %> </b> </td>
+		</tr>
+	</table>
+
+	<h2>Shipping and Billing Info</h2>
+	<h3>If you are happy with your order, please fill out the shipping info below</h3>
+	<h3>NOTE: Your address will be used
+		as the Billing Address from your account will be used.</h3>
+
+
+
+
+
+
+	<%= form_tag :controller => 'home', :action => 'checkout' do %>
+		<!--div class="field">
+			<h2>Shipping Option</h2>
+			<%= select_tag :shippingoptionid, options_for_select(@shippingoption_choice)  %>
+		</div-->
+		<div class="field">
+			<h2>First Name</h2>
+			<%= text_field_tag :firstname %>
+		</div>
+		<div class="field">
+			<h2>Last Name</h2>
+			<%= text_field_tag :lastname %>
+		</div>
+		<div class="field">
+			<h2>Street Address</h2>
+			<%= text_field_tag :address %>
+		</div>
+		<div class="field">
+			<h2>City</h2>
+			<%= text_field_tag :city %>
+		</div>
+		<div class="field">
+			<h2>State</h2>
+			<%= text_field_tag :state %>
+		</div>
+		<div class="field">
+			<h2>Zip Code</h2>
+			<%= text_field_tag :zip %>
+		</div>
+		<div class="field">
+			<h2>Card Merchant</h2>
+			<%= select_tag "merchant", "
+														<option>Visa</option>
+														<option>Mastercard</option>
+														<option>Discover</option>
+														<option>American-Express</option>".html_safe %>
+		</div>
+		<div class="field">
+			<h2>Card Number</h2>
+			<h3>We do not store your card number</h3>
+			<%= text_field_tag :cardnumber %>
+		</div>
+		<%= submit_tag 'Checkout' %>
+	<% end %>
+
+<% else %>
+	<p> There are no items in the cart. </p>
+
+<% end %>

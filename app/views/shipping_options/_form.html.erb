@@ -1,0 +1,52 @@
+<%= form_with(model: shipping_option, local: true) do |form| %>
+  <% if shipping_option.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shipping_option.errors.count, "error") %> prohibited this shipping_option from being saved:</h2>
+
+      <ul>
+      <% shipping_option.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :optionname %>
+    <%= form.text_field :optionname, id: :shipping_option_optionname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shipclass %>
+    <%= form.text_field :shipclass, id: :shipping_option_shipclass %>
+  </div>
+
+  <div class="field">
+    <%= form.label :minshiptime %>
+    <%= form.number_field :minshiptime, id: :shipping_option_minshiptime %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shipcost %>
+    <%= form.number_field :shipcost, id: :shipping_option_shipcost %>
+  </div>
+  <!--div class="field">
+    <%= form.label :minshiptime %>
+    <%= form.number_field :minshiptime, id: :shipping_option_minshiptime %>
+  </div-->
+
+  <div class="field">
+    <%= form.label :maxshiptime %>
+    <%= form.number_field :maxshiptime, id: :shipping_option_maxshiptime %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shipprovider %>
+    <%= form.text_field :shipprovider, id: :shipping_option_shipprovider %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

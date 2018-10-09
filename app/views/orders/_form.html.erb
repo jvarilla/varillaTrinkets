@@ -1,0 +1,95 @@
+<%= form_with(model: order, local: true) do |form| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+   <div class="field">
+    <%= form.label :user_id %><br />
+    <%= form.select :user_id, @user_choice %>
+  </div>
+  
+    <div class="field">
+    <%= form.label :shippingoption_id %><br />
+    <%= form.select :shippingoption_id, @shippingoption_choice %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :orderdate %>
+    <%= form.date_select :orderdate, id: :order_orderdate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :recipientisuser %>
+    <%= form.check_box :recipientisuser, id: :order_recipientisuser %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shipaddress %>
+    <%= form.text_field :shipaddress, id: :order_shipaddress %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shipcity %>
+    <%= form.text_field :shipcity, id: :order_shipcity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shipstate %>
+    <%= form.text_field :shipstate, id: :order_shipstate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shipzip %>
+    <%= form.text_field :shipzip, id: :order_shipzip %>
+  </div>
+
+  <div class="field">
+    <%= form.label :usefiledbillinfo %>
+    <%= form.check_box :usefiledbillinfo, id: :order_usefiledbillinfo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :billaddress %>
+    <%= form.text_field :billaddress, id: :order_billaddress %>
+  </div>
+
+  <div class="field">
+    <%= form.label :billcity %>
+    <%= form.text_field :billcity, id: :order_billcity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :billstate %>
+    <%= form.text_field :billstate, id: :order_billstate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :billzip %>
+    <%= form.text_field :billzip, id: :order_billzip %>
+  </div>
+
+  <div class="field">
+    <%= form.label :orderconfirmationnumber %>
+    <%= form.number_field :orderconfirmationnumber, id: :order_orderconfirmationnumber %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cardmerchant %>
+    <%= form.text_field :cardmerchant, id: :order_cardmerchant %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

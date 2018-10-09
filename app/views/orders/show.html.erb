@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @order.user_id %>
+</p>
+
+<p>
+  <strong>Shippingoption:</strong>
+  <%= @order.shippingoption_id %>
+</p>
+
+<p>
+  <strong>Orderdate:</strong>
+  <%= @order.orderdate %>
+</p>
+
+<p>
+  <strong>Recipientisuser:</strong>
+  <%= @order.recipientisuser %>
+</p>
+
+<p>
+  <strong>Shipaddress:</strong>
+  <%= @order.shipaddress %>
+</p>
+
+<p>
+  <strong>Shipcity:</strong>
+  <%= @order.shipcity %>
+</p>
+
+<p>
+  <strong>Shipstate:</strong>
+  <%= @order.shipstate %>
+</p>
+
+<p>
+  <strong>Shipzip:</strong>
+  <%= @order.shipzip %>
+</p>
+
+<p>
+  <strong>Usefiledbillinfo:</strong>
+  <%= @order.usefiledbillinfo %>
+</p>
+
+<p>
+  <strong>Billaddress:</strong>
+  <%= @order.billaddress %>
+</p>
+
+<p>
+  <strong>Billcity:</strong>
+  <%= @order.billcity %>
+</p>
+
+<p>
+  <strong>Billstate:</strong>
+  <%= @order.billstate %>
+</p>
+
+<p>
+  <strong>Billzip:</strong>
+  <%= @order.billzip %>
+</p>
+
+<p>
+  <strong>Orderconfirmationnumber:</strong>
+  <%= @order.orderconfirmationnumber %>
+</p>
+
+<p>
+  <strong>Cardmerchant:</strong>
+  <%= @order.cardmerchant %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Page:</strong>
+  <%= @email_message.page_id %>
+</p>
+<p>
+  <strong>Subject:</strong>
+  <%= @email_message.subject %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @email_message.message %>
+</p>
+
+<%= link_to 'Edit', edit_email_message_path(@email_message) %> |
+<%= link_to 'Back', email_messages_path %>

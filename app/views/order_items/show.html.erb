@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @order_item.order_id %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @order_item.product_id %>
+</p>
+
+<p>
+  <strong>Occasion:</strong>
+  <%= @order_item.occasion %>
+</p>
+
+<p>
+  <strong>Isgift:</strong>
+  <%= @order_item.isgift %>
+</p>
+
+<p>
+  <strong>Boxmessage:</strong>
+  <%= @order_item.boxmessage %>
+</p>
+
+<p>
+  <strong>Tagmessage:</strong>
+  <%= @order_item.tagmessage %>
+</p>
+
+<p>
+  <strong>Tagfontcolor:</strong>
+  <%= @order_item.tagfontcolor %>
+</p>
+
+<p>
+  <strong>Tagcolor:</strong>
+  <%= @order_item.tagcolor %>
+</p>
+
+<strong>Quantity:</strong>
+  <%= @order_item.quantity %>
+</p>
+
+<%= link_to 'Edit', edit_order_item_path(@order_item) %> |
+<%= link_to 'Back', order_items_path %>

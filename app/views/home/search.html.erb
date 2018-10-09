@@ -1,0 +1,28 @@
+<p> <h1>Search</h1> </p>
+<%= form_tag :action => 'search' do %>
+	<p>What product are you looking for?:
+	<%= text_field_tag 'searchinput', @searchinput %> </p>
+	<hr/>
+	<% if @results = true %>
+		<% if @productlist.length >0 %>
+	<p> Here are the search results:</p>
+	<table>
+		<tr>
+			<th>Course Name</th>
+			<th>Image</th>
+			<th>Description</th>
+		</tr>
+		<% @productlist.each do |p| %>
+		<tr>
+			<td><%= link_to p.prodname, product_path(p.id) %></td>
+			<td><%= image_tag p.mainimg, size:"50x50" %>
+			<td><%= p.description %></td>
+		</tr>
+	<% end %>
+	</table>
+	<% else%>
+		<p>There were no products that match the search criteria. :(  Try again!</p>
+	<% end %>
+<% end %>
+<%= submit_tag 'Search' %>
+<% end %>

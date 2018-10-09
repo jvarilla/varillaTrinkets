@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  optionname: MyString
+  shipclass: MyString
+  minshiptime: 1
+  minshiptime: 1
+  maxshiptime: 1
+  shipprovider: MyString
+
+two:
+  optionname: MyString
+  shipclass: MyString
+  minshiptime: 1
+  minshiptime: 1
+  maxshiptime: 1
+  shipprovider: MyString

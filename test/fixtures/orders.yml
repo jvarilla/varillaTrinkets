@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  shippingoption_id: 1
+  orderdate: 2018-01-31
+  recipientisuser: false
+  shipaddress: MyString
+  shipcity: MyString
+  shipstate: MyString
+  shipzip: MyString
+  usefiledbillinfo: 
+  billaddress: MyString
+  billcity: MyString
+  billstate: MyString
+  billzip: MyString
+  orderconfirmationnumber: 1
+  cardmerchant: MyString
+
+two:
+  user_id: 1
+  shippingoption_id: 1
+  orderdate: 2018-01-31
+  recipientisuser: false
+  shipaddress: MyString
+  shipcity: MyString
+  shipstate: MyString
+  shipzip: MyString
+  usefiledbillinfo: 
+  billaddress: MyString
+  billcity: MyString
+  billstate: MyString
+  billzip: MyString
+  orderconfirmationnumber: 1
+  cardmerchant: MyString

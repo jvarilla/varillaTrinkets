@@ -1,0 +1,62 @@
+<h2>Modal Example</h2>
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn" onclick="displayblockModal()">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+  <!--<%= render "home/catalogitem" %>--> 
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+	<span id="product"></span>
+  </div>
+
+</div>
+<h1>Our Catalog </h1>
+<% @prod.each do |p| %>
+	<product>
+	<table width='100%'>
+	<tr><td align='center'><b><%= link_to p.prodname,  product_path(p.id) %> </b></td></tr>
+	<tr><td><center><%= link_to (image_tag p.mainimg, size:"150x150"), product_path(p.id) %> </center></td></tr>
+	<tr><td align='center'>
+	<%= form_tag :controller => 'home', :action => 'buy' do %>	
+		<b>Price:</b> <%= number_to_currency(p.price) %>
+		<%= hidden_field_tag 'prodid', "#{p.id}" %> </br>
+		<%= select_tag "qty", "<option>1</option> <option>2</option> <option>3</option> <option>4</option> <option>5</option>".html_safe %>
+		<%= submit_tag 'Add To Cart', :class => 'button1' %>
+	<% end %>
+	</td></tr>
+	</table>
+	</product>
+<% end %>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+displayblockModal = function(pro) {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>

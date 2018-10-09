@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Optionname:</strong>
+  <%= @shipping_option.optionname %>
+</p>
+
+<p>
+  <strong>Shipclass:</strong>
+  <%= @shipping_option.shipclass %>
+</p>
+
+<p>
+  <strong>Minshiptime:</strong>
+  <%= @shipping_option.minshiptime %>
+</p>
+
+<p>
+  <strong>Minshiptime:</strong>
+  <%= @shipping_option.minshiptime %>
+</p>
+
+<p>
+  <strong>Maxshiptime:</strong>
+  <%= @shipping_option.maxshiptime %>
+</p>
+
+<p>
+  <strong>Shipprovider:</strong>
+  <%= @shipping_option.shipprovider %>
+</p>
+
+<p>
+  <strong>Shipcost:</strong>
+  <%= @shipping_option.shipcost %>
+</p>
+<%= link_to 'Edit', edit_shipping_option_path(@shipping_option) %> |
+<%= link_to 'Back', shipping_options_path %>

@@ -1,0 +1,18 @@
+<h1>Welcome to <i>Varilla Trinkets</i></h1>
+<div style="width:85%;float:left;height:100%;">
+			<h1>The best place to buy Trinket Boxes</h1>
+			<h1><%= link_to "Check out Products>>>", home_catalog_path %></h1>
+			<%= link_to  home_catalog_path do %>
+				<%= image_tag 'foodog.jpg', width: 500, height: 300, alt: 'Roar. '%>
+			<% end %>
+
+</div>
+<div style="width:15%;float:left;">
+			<% @promotions.each do|promo| %>
+				<hr>
+				<p><%= link_to promo.promotiontitle, promo.desturl, target:"_blank" %></br>
+				<p><%= promo.promotiondescription %></br>
+				<p><%= image_tag promo.adimage, size:"100x100" %></br>
+				<hr>
+			<% end %>
+</div>

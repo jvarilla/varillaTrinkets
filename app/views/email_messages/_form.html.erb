@@ -1,0 +1,34 @@
+<%= form_with(model: email_message, local: true) do |form| %>
+  <% if email_message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(email_message.errors.count, "error") %> prohibited this email_message from being saved:</h2>
+
+      <ul>
+      <% email_message.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :page_id %><br />
+    <%= form.select :page_id, @page_choice %>
+  </div>
+
+
+
+  <div class="field">
+    <%= form.label :subject %>
+    <%= form.text_field :subject, id: :email_message_subject %>
+  </div>
+
+  <div class="field">
+    <%= form.label :message %>
+    <%= form.text_area :message, id: :email_message_message %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,28 @@
+<h1>Products: </h1>
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+	  <th>Product Name</th>
+	  <th>Category</th>
+	  <th>Supplier</th>
+      <th>Price</th>
+      <th>Numinstock</th>
+	  <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% @prolist.each do |pl| %>
+      <tr>
+		<td><%= image_tag pl.mainimg, size:"50x50" %>
+        <td><%= pl.prodname %></td>
+		<td><%= pl.kingdom %></td>
+		<td><%= pl.suppliername %></td>
+        <td><%= number_to_currency(pl.price) %></td>
+        <td><%= pl.numinstock %></td>
+		<td><%= link_to 'Show', pl %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,68 @@
+<div style="float:left;width:10%;">
+		<div style="width:150;height: 150;">
+			<%= link_to(image_tag("trinket_logo2_home.png", ), home_index_path) %>
+		</div>
+
+    </div>
+		<table style="float:right;">
+			<tr>
+				<td>
+							<h2>Login/Register</h2>
+							<% if session[:user_id].nil? %>
+								<%= link_to "New User", new_user_path %>
+								<%= button_to 'Login', login_path, :method => :get %>
+							<% else %>
+								Hello <%= User.find(session[:user_id]).firstname %> !
+								<%= button_to 'Logout', logout_path, :method => :delete %>
+							<% end %>
+				</td>
+				<td  >
+					<%= form_tag :controller => 'home', :action => 'search' do %>
+						<h2>Search: <br/>
+						<%= text_field_tag 'searchinput', @searchinput %> </h2>
+					<% end %>
+				</td>
+			</tr>
+		</table>
+<div style="float:center;align:center;width:100%">
+    <div style="padding-left:25%;padding-right:25%;text-align:center">
+      <h1 style="font-size:3em;font-family:serif;"><i>Varilla Trinkets</i></h1>
+    </div>
+
+
+
+    <!--Menu-->
+		<table style= "text-align: center;padding-left: 10px;padding-right: 10px;align-content: center;">
+			<tr>
+				<td><h1><%= link_to "Catalog", home_catalog_path%></h1></td>
+				<td><h1><%= link_to "Cart", cart_path%></h1></td>
+			</tr>
+		</table>
+
+    <div class="menu" id="menu" style="padding-left:25%;padding-right:25%;background-color: #5E35B1;">
+      <%= link_to "Home", home_index_path %>
+      <%= link_to "About Us", home_about_path %>
+      <%= link_to "Contact Us", home_contact_path %>
+      <%= link_to "Animals", animals_path %>
+      <%= link_to "Email Lists", email_lists_path %>
+      <%= link_to "Email Messages", email_messages_path %>
+      <%= link_to "Order Items", order_items_path %>
+      <%= link_to "Orders", orders_path %>
+      <%= link_to "Page Visits", page_visits_path %>
+      <%= link_to "Pages", pages_path %>
+      <%= link_to "Products", products_path %>
+	  <%= link_to "Promotions", promotions_path %>
+      <%= link_to "Reviews", reviews_path %>
+      <%= link_to "Suppliers", suppliers_path %>
+	  <%= link_to "Shipping Options", shipping_options_path %>
+      <%= link_to "Users", users_path %>
+      <%= link_to "Wish Lists", wish_lists_path %>
+      <%= link_to "Reports List", reports_reportlist_path %>
+    </div>
+  </div>
+  <!--td>
+    <div>&nbsp;</div>
+    <div class="searchBar" wstyle="padding-left:25%;padding-right:25%;width:100%">
+        <input type="text" placeholder="Search"></input>
+      </div>
+  </td-->

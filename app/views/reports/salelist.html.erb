@@ -1,0 +1,29 @@
+<h1>Sale List:</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer</th>
+	  <th>Product</th>
+	  <th>Sale Date</th>
+	  <th>Sale Price</th>
+	  <th>Qty</th>
+    <th>Confirmation Number</th>
+	  <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @order_items.each do |order_item| %>
+      <tr>
+        <td><%= order_item.lastname + ", " + order_item.firstname %></td>
+		<td><%= order_item.prodname %></td>
+        <td><%= order_item.orderdate %></td>
+		<td><%= number_to_currency(order_item.price * order_item.quantity.to_i) %></td>
+		<td><%= order_item.quantity %></td>
+    <td><%= order_item.orderconfirmationnumber %></td>
+		<td><%= link_to 'Show', order_item %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

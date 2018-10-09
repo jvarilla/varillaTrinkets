@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  page_id: MyString
+  integer: MyString
+  animal_id: 1
+  supplier_id: MyString
+  integer: MyString
+  prodname: MyString
+  price: MyString
+  length: MyString
+  width: MyString
+  height: MyString
+  mainimg: MyString
+  frontimg: MyString
+  backimg: MyString
+  leftimg: MyString
+  rightimg: MyString
+  topimg: MyString
+  bottomimg: MyString
+  description: MyText
+  primarycolor: MyString
+  secondarycolor: MyString
+  hasbase: false
+  numinstock: 1
+
+two:
+  page_id: MyString
+  integer: MyString
+  animal_id: 1
+  supplier_id: MyString
+  integer: MyString
+  prodname: MyString
+  price: MyString
+  length: MyString
+  width: MyString
+  height: MyString
+  mainimg: MyString
+  frontimg: MyString
+  backimg: MyString
+  leftimg: MyString
+  rightimg: MyString
+  topimg: MyString
+  bottomimg: MyString
+  description: MyText
+  primarycolor: MyString
+  secondarycolor: MyString
+  hasbase: false
+  numinstock: 1

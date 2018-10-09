@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @page_visit.user_id %>
+</p>
+
+<p>
+  <strong>Page:</strong>
+  <%= @page_visit.page_id %>
+</p>
+
+<p>
+  <strong>Visitdate:</strong>
+  <%= @page_visit.visitdate %>
+</p>
+
+<%= link_to 'Edit', edit_page_visit_path(@page_visit) %> |
+<%= link_to 'Back', page_visits_path %>

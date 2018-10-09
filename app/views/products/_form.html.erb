@@ -1,0 +1,120 @@
+<%= form_with(model: product, local: true) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= form.label :page_id %><br />
+    <%= form.select :page_id, @page_choice %>
+  </div>
+
+  <div class="field">
+    <%= form.label :animal_id %><br />
+    <%= form.select :animal_id, @animal_choice %>
+  </div>
+
+
+
+  <div class="field">
+    <%= form.label :supplier_id %><br />
+    <%= form.select :supplier_id, @supplier_choice %>
+  </div>
+
+  <div class="field">
+    <%= form.label :prodname %>
+    <%= form.text_field :prodname, id: :product_prodname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price, id: :product_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :length %>
+    <%= form.text_field :length, id: :product_length %>
+  </div>
+
+  <div class="field">
+    <%= form.label :width %>
+    <%= form.text_field :width, id: :product_width %>
+  </div>
+
+  <div class="field">
+    <%= form.label :height %>
+    <%= form.text_field :height, id: :product_height %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mainimg %>
+    <%= form.text_field :mainimg, id: :product_mainimg %>
+  </div>
+
+  <div class="field">
+    <%= form.label :frontimg %>
+    <%= form.text_field :frontimg, id: :product_frontimg %>
+  </div>
+
+  <div class="field">
+    <%= form.label :backimg %>
+    <%= form.text_field :backimg, id: :product_backimg %>
+  </div>
+
+  <div class="field">
+    <%= form.label :leftimg %>
+    <%= form.text_field :leftimg, id: :product_leftimg %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rightimg %>
+    <%= form.text_field :rightimg, id: :product_rightimg %>
+  </div>
+
+  <div class="field">
+    <%= form.label :topimg %>
+    <%= form.text_field :topimg, id: :product_topimg %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bottomimg %>
+    <%= form.text_field :bottomimg, id: :product_bottomimg %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :product_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :primarycolor %>
+    <%= form.text_field :primarycolor, id: :product_primarycolor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :secondarycolor %>
+    <%= form.text_field :secondarycolor, id: :product_secondarycolor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hasbase %>
+    <%= form.check_box :hasbase, id: :product_hasbase %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numinstock %>
+    <%= form.number_field :numinstock, id: :product_numinstock %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

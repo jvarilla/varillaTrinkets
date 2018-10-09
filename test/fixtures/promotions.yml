@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  promotiontitle: MyString
+  promotiondescription: MyText
+  desturl: MyString
+  adimage: MyString
+  startdate: 2018-02-24
+  enddate: 2018-02-24
+
+two:
+  promotiontitle: MyString
+  promotiondescription: MyText
+  desturl: MyString
+  adimage: MyString
+  startdate: 2018-02-24
+  enddate: 2018-02-24

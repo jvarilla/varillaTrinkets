@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Promotiontitle:</strong>
+  <%= @promotion.promotiontitle %>
+</p>
+
+<p>
+  <strong>Promotiondescription:</strong>
+  <%= @promotion.promotiondescription %>
+</p>
+
+<p>
+  <strong>Desturl:</strong>
+  <%= @promotion.desturl %>
+</p>
+
+<p>
+  <strong>Adimage:</strong>
+  <%= @promotion.adimage %>
+</p>
+
+<p>
+  <strong>Startdate:</strong>
+  <%= @promotion.startdate %>
+</p>
+
+<p>
+  <strong>Enddate:</strong>
+  <%= @promotion.enddate %>
+</p>
+
+<%= link_to 'Edit', edit_promotion_path(@promotion) %> |
+<%= link_to 'Back', promotions_path %>

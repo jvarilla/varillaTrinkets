@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Email Lists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Emailmessage</th>
+      <th>Viewedemail</th>
+      <th>Clickedemailad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @email_lists.each do |email_list| %>
+      <tr>
+        <td><%= email_list.user_id %></td>
+        <td><%= email_list.emailMessage_id %></td>
+        <td><%= email_list.viewedemail %></td>
+        <td><%= email_list.clickedemailad %></td>
+        <td><%= link_to 'Show', email_list %></td>
+        <td><%= link_to 'Edit', edit_email_list_path(email_list) %></td>
+        <td><%= link_to 'Destroy', email_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Email List', new_email_list_path %>

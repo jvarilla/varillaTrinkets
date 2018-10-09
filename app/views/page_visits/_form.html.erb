@@ -1,0 +1,34 @@
+<%= form_with(model: page_visit, local: true) do |form| %>
+  <% if page_visit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(page_visit.errors.count, "error") %> prohibited this page_visit from being saved:</h2>
+
+      <ul>
+      <% page_visit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %><br />
+    <%= form.select :user_id, @user_choice %>
+  </div>
+
+
+<div class="field">
+    <%= form.label :page_id %><br />
+    <%= form.select :page_id, @page_choice %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :visitdate %>
+    <%= form.date_select :visitdate, id: :page_visit_visitdate %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
